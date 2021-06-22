@@ -2,6 +2,8 @@
 
 ## About Me
 
+Hi, my name is Amy Churchill. I am an incoming sophomore CS major!
+
 ## The Premise
 
 ## Tools used
