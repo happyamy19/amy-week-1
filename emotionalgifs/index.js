@@ -33,6 +33,5 @@ module.exports = async function (context, req) {
             }
         })
         let data = await resp.json();
-        
         return data; 
     }
