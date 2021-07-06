@@ -7,11 +7,11 @@ module.exports = async function (context, req) {
     var body = req.body
     var parts = multipart.Parse(body, boundary);
     var image = parts[0].data
-    var result = analyzeImage(image)
+    var result = await analyzeImage(image)
     
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: {result}
+        body: result
     };
 }
 
