@@ -24,17 +24,17 @@ module.exports = async function (context, req) {
 
     async function getGif(main_emotion){
         const giphyKey = process.env.GIPHY_KEY;
-    const giphyEndpoint = "https://api.giphy.com/v1/gifs/translate" 
+        const giphyEndpoint = "https://api.giphy.com/v1/gifs/translate";
 
-    let params = new URLSearchParams({
-        'apikey': giphyKey,
-        's': main_emotion
-    })
-    let resp = await fetch(giphyEndpoint+ '?' + params.toString(), {
-        method: 'GET'
-    }
-    const giphyResult = await resp.json()
-    return giphyResult
+        let params = new URLSearchParams({
+           'api_key': giphyKey,
+           's': main_emotion
+        })
+        let resp = await fetch(giphyEndpoint+ '?' + params.toString(), {
+            method: 'GET'
+        })
+        const giphyResult = await resp.json()
+        return giphyResult
     }
 
 
