@@ -18,9 +18,20 @@ module.exports = async function (context, req) {
     let generation = determine_generation(age)
     context.log(generation)
 
+    const songs = {"GenZ":"https://open.spotify.com/track/0SIAFU49FFHwR3QnT5Jx0k?si=1c12067c9f2b4fbf", 
+"GenY":"https://open.spotify.com/track/1Je1IMUlBXcx1Fz0WE7oPT?si=a04bbdf6ec4948b9", 
+"GenX":"https://open.spotify.com/track/4Zau4QvgyxWiWQ5KQrwL43?si=790d9e3ef2ed408d", 
+"BabyBoomers":"https://open.spotify.com/track/4gphxUgq0JSFv2BCLhNDiE?si=1abb329f2dc24f50", 
+"Unknown":"https://open.spotify.com/track/5ygDXis42ncn6kYG14lEVG?si=84b49b41d09d4d11"}
+
+let value = song[generation]
+response = `We guessed you're part of this generation: ${generation}! Happy listening! ${value}`
+
+context.log(response)
+
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: generation
+        body: response
     };
 }
 //number: +18434179543
@@ -57,7 +68,7 @@ function determine_generation(age){
     } else if (age > 56 && age < 76){
         generation  = "BabyBoomers"
     } else {
-        generation = "unknown"
+        generation = "Unknown"
     }
     return generation
 }
