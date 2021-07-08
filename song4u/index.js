@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
 "Unknown":"https://open.spotify.com/track/5ygDXis42ncn6kYG14lEVG?si=84b49b41d09d4d11"}
 
 let value = song[generation]
-response = `We guessed you're part of this generation: ${generation}! Happy listening! ${value}`
+let response = `We guessed you're part of this generation: ${generation}! Happy listening! ${value}`
 
 context.log(response)
 
