@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
     })
 
     let data = await resp.arrayBuffer() //data holds the image we just downloaded
-    let age_data = analyzeImage(data)
+    let age_data = await analyzeImage(data)
     let age = age_data[0].faceAttributes.age
 
     let generation = determine_generation(age)
