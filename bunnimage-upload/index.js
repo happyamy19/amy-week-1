@@ -24,7 +24,7 @@ if (filetype == "image/png") {
 
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: responseMessage
+        body: {responseMessage}
     };
 }
 
