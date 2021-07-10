@@ -45,7 +45,7 @@ async function uploadFile(parsedBody, ext){
     const containerName = "images";
     const containerClient = blobServiceClient.getContainerClient(containerName);    // Get a reference to a container
 
-    const blobName = password + "." + ext;    // Create the container
+    const blobName = password + '.' + ext;    // Create the container
     const blockBlobClient = containerClient.getBlockBlobClient(blobName); // Get a block blob client
 
     const uploadBlobResponse = await blockBlobClient.upload(parsedBody[0].data, parsedBody[0].data.length);
