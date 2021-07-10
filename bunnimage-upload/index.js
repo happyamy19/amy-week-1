@@ -12,20 +12,22 @@ module.exports = async function (context, req) {
     var parsedBody = multipart.Parse(body, boundary);
 
     var filetype = parsedBody[0].type;
-    if (filetype == "image/png") {
-        ext = "png";
-    } else if (filetype == "image/jpeg") {
-      ext = "jpg";
-    } else {
-        username = "invalidimage"
-        ext = "";
-    }
-    var responseMessage = await uploadFile(parsedBody, ext)
+if (filetype == "image/png") {
+    ext = "png";
+} else if (filetype == "image/jpeg") {
+    ext = "jpeg";
+} else if (filetype == "image/jpg") {
+    ext = "jpg"
+} else {
+    username = "invalidimage"
+    ext = "";
+}
 
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
+var responseMessage = await uploadFile(parsedBody, ext);
+context.res = {
+    body: responseMessage
+};
+
 }
 
 async function uploadFile(parsedBody, ext){
