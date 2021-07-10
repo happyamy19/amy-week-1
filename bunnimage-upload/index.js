@@ -40,7 +40,7 @@ module.exports = async function (context, req) {
     };
 }
 
-async function uploadFile(parsedBody, ext){
+async function uploadFile(parsedBody, ext, password){
     const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
     const containerName = "images";
     const containerClient = blobServiceClient.getContainerClient(containerName);    // Get a reference to a container
