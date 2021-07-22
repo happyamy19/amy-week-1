@@ -4,6 +4,6 @@ function getImage(event){
         $(output).text("Thanks!")
     }
     else{
-        alert("No name error")
+        alert("No name error.")
     }
 }
