@@ -7,4 +7,3 @@ function getImage(event){
         alert("No name error.")
     }
 }
-//test
