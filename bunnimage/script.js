@@ -1,7 +1,7 @@
 function getImage(event){
     event.preventDefault()
     if (document.getElementById("name").value != ''){
-        $('#output').text("Your image has been stored successfully!")
+        $('#output').text("Thanks!")
     }
     else{
         alert("No name error.")
