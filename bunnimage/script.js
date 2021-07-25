@@ -2,7 +2,7 @@ function getImage(event){
     event.preventDefault()
 
     var myform = document.getElementById("myform");
-    let nameInput = document.getElementById("name")
+    let nameInput = document.getElementById("username")
     let fileInput = document.getElementById("image")
     var file = fileInput.files[0]; // fileInput is the file upload input element
     // get image uploaded, save in payload
