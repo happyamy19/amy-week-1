@@ -1,3 +1,4 @@
+
 async function getImage(event){
     event.preventDefault()
     var myform = document.getElementById("myform");
