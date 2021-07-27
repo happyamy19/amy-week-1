@@ -31,9 +31,9 @@ module.exports = async function (context, req) {
     }
 
     let cat1 = await getCat(name1)
-    let cat2 = await getCat(name1)
-    let cat3 = await getCat(name1)
-    let cat4 = await getCat(name1)
+    let cat2 = await getCat(name2)
+    let cat3 = await getCat(name3)
+    let cat4 = await getCat(name4)
     
 
 //put what you want to turn into base64 inside "originaldata"
