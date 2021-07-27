@@ -42,10 +42,10 @@ module.exports = async function (context, req) {
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: {
-            cat1: cat1,
-            cat2: cat2,
-            cat3: cat3,
-            cat4: cat4
+            "cat1": cat1,
+            "cat2": cat2,
+            "cat3": cat3,
+            "cat4": cat4
         }
     };
 }
