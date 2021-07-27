@@ -10,8 +10,10 @@ const fetch = require('node-fetch')
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
+    context.log('test');
     // let name1 = generate_name()
     // let name2 = generate_name()
+    //get names from the query
 
     let name1 = req.query.name1
     let name2 = req.query.name2
@@ -27,6 +29,7 @@ module.exports = async function (context, req) {
                 // we need to receive it as a buffer since this is an image we are receiving from the API
                 // Buffer?? https://developer.mozilla.org/en-US/docs/Web/API/Blob
         let base64data = Buffer.from(data).toString('base64')
+
         return base64data
     }
 
