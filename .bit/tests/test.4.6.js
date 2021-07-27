@@ -5,7 +5,7 @@ uri = process.env.TWOCATZ_ENDPOINT
 
 try {
     (async () => {
-        const resp = await fetch(uri + "&name1=hi&name2=hi&name3=hi&name4=hi", {
+        const resp = await fetch(uri + "?name1=hi&name2=hi&name3=hi&name4=hi", {
             method: 'GET'
         });
         var data = await resp.json()
