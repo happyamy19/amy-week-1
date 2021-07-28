@@ -30,10 +30,10 @@ module.exports = async function (context, req) {
     //context.log("newMessage: " + newMessage) // TESTING
 
     let items = await createDocument(newMessage);
-    num_matches = await findMatches(items, offendername)
+    let [num_matches, map] = await findMatches(items, offendername)
 
     const responseMessage = `Thank you, ${items[items.length-1].message[0]}. We found ${num_matches} matches` // 6 was random_value
-
+    
     context.res = {
         body: responseMessage
      };
@@ -41,12 +41,17 @@ module.exports = async function (context, req) {
 
 async function findMatches(items, offendername){
     var num_matches = -1;
+    const matchmap = new Map();
+    var index = 0;
+
     for (let i = 0; i < items.length; i++) {
         if (items[i].message[2] ==  offendername){
             num_matches =  num_matches+1;
+            matchmap.set(index, items[i]);
+            index = index + 1
         }
     }
-    return num_matches
+    return [num_matches, matchmap]
 }
 
 async function create(client, databaseId, containerId) {
