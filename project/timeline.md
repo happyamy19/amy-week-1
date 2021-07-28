@@ -28,7 +28,7 @@
 
 #### Objective:
 > Checklist of everything you need to do to complete this issue
-- be wary of if keys neeed to be stored and where - see song4u
+- be wary of if keys need to be stored and where - see song4u
 - make trigger function store information into the cosdb
 - return true if it was done and false if not
 
@@ -62,8 +62,8 @@
 - TBD later
 
 
-
 I'm not setting up the specific weeks because I'm unsure of how long everything will take. I will update this later as things progress
+
 ## Week 2
 
 ## Week 3
