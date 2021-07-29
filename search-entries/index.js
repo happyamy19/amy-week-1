@@ -11,6 +11,7 @@ const config = {
   }; 
 
 module.exports = async function (context, req) {
+
     console.log('JavaScript HTTP trigger function processed a request.');
     
     let offendername = req.query.offendername
@@ -26,6 +27,7 @@ module.exports = async function (context, req) {
 }
 
 async function findMatches(items, offendername){
+
     var num_matches = 0;
     const matchmap = new Map();
     var index = 0;
@@ -41,6 +43,7 @@ async function findMatches(items, offendername){
     }
     return [num_matches, matchmap]
 }
+
 async function create(client, databaseId, containerId) {
     const partitionKey = config.partitionKey;
   
@@ -84,3 +87,5 @@ async function create(client, databaseId, containerId) {
 
     return items
   }
+
+
