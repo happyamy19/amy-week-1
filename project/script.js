@@ -1,4 +1,4 @@
-function newEntry(){
+async function newEntry(){
     var name = document.getElementById("name").value
     var email = document.getElementById("email").value
     var offender = document.getElementById("offender").value
@@ -10,12 +10,13 @@ function newEntry(){
             const resp = await fetch(url,{
                 method:'POST',
                 headers:{
-                    'name': name,
-                    'email': email,
-                    'offendername': offender,
-                    'incidentdescription': description,
+                    name: name,
+                    email: email,
+                    offendername: offender,
+                    incidentdescription: description
                 }
             })
+
             console.log("POST request was made successfully")
         }
         catch(err){

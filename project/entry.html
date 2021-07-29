@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>The best form</title>
+    <title>Entry</title>
   </head>
   <body>
       <div id="page">
@@ -18,12 +18,12 @@
             <h1 id="title">Make a New Entry</h1>
             <form id ="myform" onsubmit="newEntry()" enctype="multipart/form-data">
                   <input type="text" id="name" name="name" placeholder="Your Name"/><br>
-                  <input type="email" id="email" name="email" placeholder="Your Email"/><br>
-                  <input type="text" id="offender" name="offender" placeholder="Offender Name"/><br>
-                  <input type="text" id="description" name="description" placeholder="Incident Description"/><br>
-                  <input value="Submit" type="submit" id="button1"/></input>
+                  <input type="email" autocomplete="off" id="email" name="email" placeholder="Your Email"/><br>
+                  <input type="text" autocomplete="off" id="offender" name="offender" placeholder="Offender Name"/><br>
+                  <input type="text" size="25%" autocomplete="off" id="description" name="description" placeholder="Incident Description"/><br><br>
+                  <input value="Submit" autocomplete="off" type="submit" id="button1"/></input>
                 </form>
-                <div id="output">Output</div>
+
         </div>
 
         </div>
