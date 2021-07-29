@@ -1,0 +1,25 @@
+ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  div#header{
+    text-align: center; 
+  }
+
+  div#page{
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    padding: 8px;
+  }

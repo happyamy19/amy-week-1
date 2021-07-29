@@ -14,10 +14,10 @@ module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
     // get info from params
-    let name = req.query.name
-    let email = req.query.email
-    let offendername = req.query.offendername
-    let incidentdescription = req.query.incidentdescription
+    var name = req.headers['name'];
+    var email = req.headers['email'];
+    var offendername = req.headers['offendername'];
+    var incidentdescription = req.headers['incidentdescription'];
 
     // create a new array with the info
     let newEntryArray = [name, email, offendername, incidentdescription]
