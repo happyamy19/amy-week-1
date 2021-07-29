@@ -12,9 +12,8 @@ function newEntry(){
                 headers:{
                     'name': name,
                     'email': email,
-                    'offender': offender,
-                    'descrition': description,
-
+                    'offendername': offender,
+                    'incidentdescription': description,
                 }
             })
             console.log("POST request was made successfully")
