@@ -1,3 +1,4 @@
+
 const querystring = require('querystring');
 const fetch = require('node-fetch'); // use to make requests 
 const CosmosClient = require("@azure/cosmos").CosmosClient;
@@ -11,14 +12,14 @@ const config = {
   }; 
 
 module.exports = async function (context, req) {
-
     console.log('JavaScript HTTP trigger function processed a request.');
     
     let offendername = req.query.offendername
-    let items = getitems()
-    let [num_matches, matchmap] = await findMatches(items, offendername)
+    let items = await getitems()
 
-    responseMessage = `We found ${num_matches} matches ${JSON.stringify(items)}`
+    let matches= await findMatches(items, offendername)
+
+    responseMessage = `We found ${matches.length} matches ${JSON.stringify(matches)}`
 
     context.res = {
         // status: 200, /* Defaults to 200 */
@@ -27,23 +28,17 @@ module.exports = async function (context, req) {
 }
 
 async function findMatches(items, offendername){
-
-    var num_matches = 0;
-    const matchmap = new Map();
-    var index = 0;
+    var matches = []
     console.log("about to begin searching")
 
     for (let i = 0; i < items.length; i++) {
         console.log("searching... " + i)
         if (items[i].message[2] ==  offendername){
-            num_matches =  num_matches+1;
-            matchmap.set(index, items[i]);
-            index = index + 1
+          matches.push(items[i])
         }
     }
-    return [num_matches, matchmap]
+    return matches
 }
-
 async function create(client, databaseId, containerId) {
     const partitionKey = config.partitionKey;
   
@@ -74,7 +69,7 @@ async function create(client, databaseId, containerId) {
     const database = client.database(databaseId);
     const container = database.container(containerId);
     
-    // Make sure Tasks database is already setup. If not, create it.
+    // Make sure database is already setup. If not, create it.
     await create(client, databaseId, containerId);
     const querySpec = {
         query: "SELECT * from c" //SELECT * from c   SELECT top 1 * FROM c order by c._ts desc
@@ -87,5 +82,3 @@ async function create(client, databaseId, containerId) {
 
     return items
   }
-
-
